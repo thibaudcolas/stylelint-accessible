@@ -1,0 +1,106 @@
+{
+  "name": "stylelint-accessible",
+  "version": "0.1.0",
+  "description": "Catch accessibility gotchas with stylelint",
+  "keywords": [
+    "stylelint",
+    "stylelint-plugin",
+    "a11y",
+    "accessibility"
+  ],
+  "bugs": {
+    "url": "https://github.com/thibaudcolas/stylelint-accessible/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thibaudcolas/stylelint-accessible.git"
+  },
+  "license": "MIT",
+  "author": "Thibaud Colas",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**/*.js",
+    "!**/__tests__/**",
+    "!lib/testUtils/**"
+  ],
+  "scripts": {
+    "format": "prettier . --write",
+    "jest": "jest",
+    "lint": "npm run lint:formatting && npm run lint:js && npm run lint:md",
+    "lint:formatting": "prettier . --check",
+    "lint:js": "eslint . --cache --max-warnings=0",
+    "lint:md": "remark . --quiet --frail",
+    "prepare": "husky install",
+    "pretest": "npm run lint",
+    "test": "jest --coverage",
+    "watch": "jest --watch"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,json,md,ts,yml}": "prettier --write"
+  },
+  "prettier": "@stylelint/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "stylelint"
+    ],
+    "globals": {
+      "__dirname": true,
+      "module": true,
+      "require": true,
+      "testRule": true
+    },
+    "root": true
+  },
+  "remarkConfig": {
+    "plugins": [
+      "@stylelint/remark-preset"
+    ]
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "lib/**/*.js",
+      "!lib/**/{__tests__,testUtils}/**/*.js"
+    ],
+    "coverageDirectory": "./.coverage/",
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    },
+    "preset": "jest-preset-stylelint",
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
+    "testEnvironment": "node",
+    "testRegex": ".*\\.test\\.js$|rules/.*/__tests__/.*\\.js$"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@stylelint/prettier-config": "^2.0.0",
+    "@stylelint/remark-preset": "^3.0.0",
+    "eslint": "^8.7.0",
+    "eslint-config-stylelint": "^15.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "jest-preset-stylelint": "^4.2.0",
+    "lint-staged": "^12.3.1",
+    "prettier": "2.5.1",
+    "remark-cli": "^10.0.1"
+  },
+  "peerDependencies": {
+    "stylelint": "^14.0.0"
+  },
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  }
+}
