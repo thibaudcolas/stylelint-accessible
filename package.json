@@ -25,13 +25,11 @@
   ],
   "scripts": {
     "format": "prettier . --write",
-    "jest": "jest",
     "lint": "npm run lint:formatting && npm run lint:js && npm run lint:md",
     "lint:formatting": "prettier . --check",
     "lint:js": "eslint . --cache --max-warnings=0",
     "lint:md": "remark . --quiet --frail",
     "prepare": "husky install",
-    "pretest": "npm run lint",
     "test": "jest --coverage",
     "watch": "jest --watch"
   },
