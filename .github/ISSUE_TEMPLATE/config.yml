@@ -1,0 +1,4 @@
+contact_links:
+  - name: '❓ Questions about this project'
+    url: https://github.com/thibaudcolas/stylelint-accessible/discussions
+    about: Use GitHub Discussions to get help with this project.
