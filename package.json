@@ -31,7 +31,7 @@
     "lint:md": "remark . --quiet --frail",
     "prepare": "husky install",
     "test": "jest --coverage",
-    "watch": "jest --watch"
+    "test:watch": "jest --watch"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
