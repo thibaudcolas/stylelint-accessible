@@ -30,7 +30,7 @@
     "lint:js": "eslint . --cache --max-warnings=0",
     "lint:md": "remark . --quiet --frail",
     "prepare": "husky install",
-    "test": "jest --coverage",
+    "test": "jest --coverage --verbose",
     "test:watch": "jest --watch"
   },
   "lint-staged": {
@@ -82,7 +82,6 @@
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.js$|rules/.*/__tests__/.*\\.js$"
   },
-  "dependencies": {},
   "devDependencies": {
     "@stylelint/prettier-config": "^2.0.0",
     "@stylelint/remark-preset": "^3.0.0",

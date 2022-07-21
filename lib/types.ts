@@ -21,7 +21,7 @@ interface SecondaryRuleOption {
 }
 
 interface TestCase {
-	label: string;
+	description: string;
 	code: string;
 	demo?: boolean;
 	message: string;
