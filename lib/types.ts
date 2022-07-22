@@ -45,5 +45,6 @@ export interface RuleSchema {
 		impact: 'Serious' | 'Moderate' | 'Low';
 		resources: string[];
 	};
+	messages: { [key: string]: string };
 	tests: TestSuite[];
 }
