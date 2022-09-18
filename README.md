@@ -1,3 +1,13 @@
+# stylelint-accessible
+
+## Installation
+
+```bash
+npm install --save-dev stylelint-accessible
+```
+
+
+
 Rules:
 
 - no-text-align-justify

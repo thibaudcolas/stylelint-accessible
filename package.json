@@ -29,6 +29,7 @@
     "lint:formatting": "prettier . --check",
     "lint:js": "eslint . --cache --max-warnings=0",
     "lint:md": "remark . --quiet --frail",
+    "build:docs": "node docs/documentation.js",
     "prepare": "husky install",
     "test": "jest --coverage --verbose",
     "test:watch": "jest --watch"
